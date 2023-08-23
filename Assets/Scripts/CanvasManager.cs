@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 public class CanvasManager : MonoBehaviour
 {
     public GameObject creditsCanvas;
+    private void Start()
+    {
+        creditsCanvas.SetActive(false);
+    }
 
-   public void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene("Level 1");
     }
