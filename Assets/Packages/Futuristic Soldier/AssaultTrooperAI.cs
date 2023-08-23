@@ -21,6 +21,6 @@ public class AssaultTrooperAI : MonoBehaviour
     void Update()
     {
         agent.SetDestination(target.position);
-        anim.SetFloat("MoveY", agent.velocity.magnitude / agent.speed);
+        //anim.SetFloat("MoveY", agent.velocity.magnitude / agent.speed);
     }
 }

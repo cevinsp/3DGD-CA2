@@ -11,6 +11,12 @@ public class AssaultTrooper : MonoBehaviour {
     public float moveSpeed = 5f;
     public float rotationSpeed = 180f;
 
+    public float jumpRange = 1.1f;
+    public Transform groundCheck;
+    bool grounded;
+    public float groundDist = 0.4f;
+    public LayerMask groundMask;
+
     public enum Player { P1, P2 }
     public Player player;
 
@@ -22,6 +28,15 @@ public class AssaultTrooper : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        grounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
+
+        if(grounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+            velocity.y += 9.81f * Time.deltaTime;
+        //controller.Move(velocity)
+
         // Factor in gravity.
         if(controller.isGrounded) velocity = Vector3.zero;
         else velocity += Physics.gravity * Time.deltaTime;
@@ -49,5 +64,13 @@ public class AssaultTrooper : MonoBehaviour {
         {
             anim.SetTrigger("Attack");
         }
+    }
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump" + player.ToString()) && grounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpRange * -2 * 9.81f);
+        }
+
     }
 }

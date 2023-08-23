@@ -70,3 +70,6 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Lesson something/Asset Package/Sci-Fi Characters/Bootcamp Map.meta
+Assets/Lesson something/Asset Package/Sci-Fi Characters/Bootcamp Map/Scene.unity
+Assets/Lesson something/Asset Package/Sci-Fi Characters/Bootcamp Map/Scene.unity.meta
