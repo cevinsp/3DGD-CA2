@@ -62,25 +62,31 @@ public class AssaultTrooper : MonoBehaviour {
         );
         
 
+
         Vector3 displacement = transform.TransformDirection(movement.normalized) * moveSpeed;
-        
+        isMoving = true;
+
 
         controller.Move((displacement + velocity) * Time.deltaTime);
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.z);
-        //isMoving = true;
+        
+
 
         // Handles rotation when moving mouse.
         transform.Rotate(
             0,
             Input.GetAxis("Mouse X" + player.ToString()) * rotationSpeed * Time.deltaTime, 
             0
+
         );
+        
 
         //Plays attack animation
         if (Input.GetButtonDown("Fire1" + player.ToString()))
         {
             anim.SetTrigger("Attack");
+            
         }
     }
     void Jump()

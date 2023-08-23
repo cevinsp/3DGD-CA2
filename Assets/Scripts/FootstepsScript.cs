@@ -6,22 +6,33 @@ public class FootstepsScript : MonoBehaviour
 {
 
     public AudioSource footstepsSound;
+    public AudioClip footstepsSFX;
+    public GameObject footstepsTransform;
     public AssaultTrooper assaultTrooper;
 
      void Start()
     {
         assaultTrooper.GetComponent<AssaultTrooper>();
+        footstepsTransform.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
         if (assaultTrooper.isMoving)
         {
-            footstepsSound.Play();
+            //StartCoroutine(FootstepsCoroutine());
+            footstepsTransform.SetActive(true);
         }
         else
         {
-            footstepsSound.Pause();
+            //footstepsSound.Pause();
+            footstepsTransform.SetActive(false);
         }
     }
+
+    //private IEnumerator FootstepsCoroutine()
+    //{
+        //footstepsSound.PlayOneShot(footstepsSFX);
+       //yield return new WaitForSeconds(1);
+    //}
 }
