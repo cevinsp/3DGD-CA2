@@ -15,7 +15,8 @@ public class AssaultTrooper : MonoBehaviour {
     protected float basiccd;
     [SerializeField]
     protected bool canBasic;
-    public AudioClip fireClip;
+    public AudioSource audioSource;
+    public AudioClip fireClip, deathClip;
 
     public float moveSpeed = 5f;
     public float rotationSpeed = 180f;
@@ -127,6 +128,7 @@ public class AssaultTrooper : MonoBehaviour {
         anim.SetBool("isDead", true);
         yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
+        audioSource.PlayOneShot(deathClip);
     }
 
 

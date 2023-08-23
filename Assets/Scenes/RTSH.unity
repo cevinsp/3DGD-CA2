@@ -1272,9 +1272,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028bde653da6a2d469d781a9b54902ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   BasicCooldown: 0
   canBasic: 0
+  audioSource: {fileID: 0}
   fireClip: {fileID: 0}
+  deathClip: {fileID: 0}
   moveSpeed: 2.5
   rotationSpeed: 180
   jumpRange: 1.1
@@ -1285,7 +1288,6 @@ MonoBehaviour:
     m_Bits: 8
   health: 100
   player: 1
-  isMoving: 0
 --- !u!4 &573337761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 484680, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
@@ -1321,6 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieSpawn: {fileID: 226091533}
+  period: 0
 --- !u!4 &627548018
 Transform:
   m_ObjectHideFlags: 0
@@ -5295,9 +5298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028bde653da6a2d469d781a9b54902ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
   BasicCooldown: 0
   canBasic: 0
+  audioSource: {fileID: 0}
   fireClip: {fileID: 8300000, guid: 98e7d5659b5f9de49b68923cca4caaaf, type: 3}
+  deathClip: {fileID: 8300000, guid: a8b93aee2158a444ab6a428f4cd7535d, type: 3}
   moveSpeed: 2.5
   rotationSpeed: 180
   jumpRange: 1.1
@@ -5308,13 +5314,7 @@ MonoBehaviour:
     m_Bits: 8
   health: 100
   player: 0
-  isMoving: 0
---- !u!4 &1672193076 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 484680, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
-  m_PrefabInstance: {fileID: 2076564501}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1672193077
+--- !u!82 &1672193074
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5324,11 +5324,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 698009c6944e33f4ba1cc096f7355d0d, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5410,6 +5410,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1672193076 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 484680, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
+  m_PrefabInstance: {fileID: 2076564501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1672193078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5422,7 +5427,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee369cd6e7fa1d418262266135a3b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepsSound: {fileID: 1672193077}
+  footstepsSound: {fileID: 0}
+  footstepsSFX: {fileID: 8300000, guid: 337eaebc23bc7dd4d86ead3ed42c9a1b, type: 3}
+  footstepsTransform: {fileID: 2056027094}
+  assaultTrooper: {fileID: 1672193073}
 --- !u!1 &1695836851
 GameObject:
   m_ObjectHideFlags: 0
@@ -6056,7 +6064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2056027095
 Transform:
   m_ObjectHideFlags: 0
@@ -6082,7 +6090,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 698009c6944e33f4ba1cc096f7355d0d, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
