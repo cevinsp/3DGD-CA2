@@ -7,6 +7,7 @@ public class AssaultTrooper : MonoBehaviour {
     CharacterController controller;
     Animator anim;
     Vector3 velocity;
+    public bool isMoving;
 
     [Header("Basic Attack")]
     [Range(0, 10f)]
@@ -29,10 +30,12 @@ public class AssaultTrooper : MonoBehaviour {
     public enum Player { P1, P2 }
     public Player player;
 
+
     // Start is called before the first frame update
     void Start(){
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        isMoving = false;
     }
 
     // Update is called once per frame
@@ -44,22 +47,28 @@ public class AssaultTrooper : MonoBehaviour {
             velocity.y = -2f;
         }
             velocity.y += 9.81f * Time.deltaTime;
+        
         //controller.Move(velocity)
 
         // Factor in gravity.
-        if(controller.isGrounded) velocity = Vector3.zero;
+        if (controller.isGrounded) velocity = Vector3.zero;
         else velocity += Physics.gravity * Time.deltaTime;
 
         // Listen to input.
         Vector3 movement = new Vector3(
             Input.GetAxis("Horizontal" + player.ToString()),
             0, Input.GetAxis("Vertical" + player.ToString())
+
         );
+        
+
         Vector3 displacement = transform.TransformDirection(movement.normalized) * moveSpeed;
+        
 
         controller.Move((displacement + velocity) * Time.deltaTime);
         anim.SetFloat("MoveX", movement.x);
         anim.SetFloat("MoveY", movement.z);
+        //isMoving = true;
 
         // Handles rotation when moving mouse.
         transform.Rotate(
