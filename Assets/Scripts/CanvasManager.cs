@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class CanvasManager : MonoBehaviour
 {
     public GameObject creditsCanvas;
+    public AudioSource audioSource;
+    public AudioClip selectSFX, confirmSFX;
+
     private void Start()
     {
         creditsCanvas.SetActive(false);
@@ -13,7 +16,15 @@ public class CanvasManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level 1");
+        StartCoroutine(SomeCoroutine());
+    }
+
+    //Wait a lil b4 loading the level
+    private IEnumerator SomeCoroutine()
+    {
+        audioSource.PlayOneShot(confirmSFX);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("RTSH");
     }
 
     public void Credits()
@@ -38,5 +49,9 @@ public class CanvasManager : MonoBehaviour
        
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Start");
+    }
 
 }
