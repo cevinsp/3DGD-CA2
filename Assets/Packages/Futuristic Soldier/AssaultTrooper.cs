@@ -8,6 +8,14 @@ public class AssaultTrooper : MonoBehaviour {
     Animator anim;
     Vector3 velocity;
 
+    [Header("Basic Attack")]
+    [Range(0, 10f)]
+    public float BasicCooldown; //maxcd
+    protected float basiccd;
+    [SerializeField]
+    protected bool canBasic;
+    public AudioClip fireClip;
+
     public float moveSpeed = 5f;
     public float rotationSpeed = 180f;
 
@@ -17,6 +25,7 @@ public class AssaultTrooper : MonoBehaviour {
     public float groundDist = 0.4f;
     public LayerMask groundMask;
 
+    public int health = 100;
     public enum Player { P1, P2 }
     public Player player;
 
@@ -71,6 +80,44 @@ public class AssaultTrooper : MonoBehaviour {
         {
             velocity.y = Mathf.Sqrt(jumpRange * -2 * 9.81f);
         }
-
     }
+
+    //method to check/update hp
+    public void UpdateHealth(int dmgvalue)
+    {
+        //Subtract damage from health
+        //if damage is positive, color entity red
+        //else damage is negative (meaning healing), color entity green
+        health -= dmgvalue;
+        //if (Mathf.Sign(dmgvalue) == 1) UpdateColor(Color.red); //dmg color
+        //else if (Mathf.Sign(dmgvalue) == -1) UpdateColor(Color.green); //heal color
+
+        //for players to update their health bar
+        //AssaultTrooper as = this.gameObject.GetComponent<AssaultTrooper>();
+        //if (as != null)
+        //{
+        //    healthBarUI.UpdateHP(hp, as);
+        //}
+        //if entity is to die
+        if (health <= 0)
+        {
+            //DeathEvent();
+            StartCoroutine(Die());
+        }
+        //else StartCoroutine(ResetColor());
+    }
+
+    IEnumerator Die()
+    {
+        anim.SetBool("isDead", true);
+        yield return new WaitForSeconds(1);
+        gameObject.SetActive(false);
+    }
+
+
+    //public void DeathEvent()
+    //{
+    //    StartCoroutine(Die());
+        //gameObject.SetActive(false);
+    //}
 }
