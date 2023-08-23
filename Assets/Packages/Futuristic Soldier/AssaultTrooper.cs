@@ -27,6 +27,9 @@ public class AssaultTrooper : MonoBehaviour {
     public float groundDist = 0.4f;
     public LayerMask groundMask;
 
+    public GameObject deathScreen;
+    public GameObject liveScreen;
+
     public int health = 100;
     public enum Player { P1, P2 }
     public Player player;
@@ -128,6 +131,8 @@ public class AssaultTrooper : MonoBehaviour {
         anim.SetBool("isDead", true);
         yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
+        liveScreen.SetActive(false);
+        deathScreen.SetActive(true);
         audioSource.PlayOneShot(deathClip);
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0060138176, g: 0.06016229, b: 0.19518855, a: 1}
+  m_IndirectSpecularColor: {r: 0.006013818, g: 0.060162302, b: 0.19518855, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -893,8 +893,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 197, y: 127}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 197, y: 114}
+  m_SizeDelta: {x: 160, y: 56.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324466684
 MonoBehaviour:
@@ -929,7 +929,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HP:'
+  m_Text: 'HP:
+
+'
 --- !u!222 &324466685
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1286,6 +1288,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  deathScreen: {fileID: 43345394}
+  liveScreen: {fileID: 1495842042}
   health: 100
   player: 1
 --- !u!4 &573337761 stripped
@@ -1721,8 +1725,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -103, y: 127}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -103, y: 114}
+  m_SizeDelta: {x: 160, y: 55.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919863462
 MonoBehaviour:
@@ -1757,7 +1761,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HP:'
+  m_Text: 'HP:
+
+'
 --- !u!222 &919863463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5312,6 +5318,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  deathScreen: {fileID: 1997592664}
+  liveScreen: {fileID: 297592370}
   health: 100
   player: 0
 --- !u!82 &1672193074
