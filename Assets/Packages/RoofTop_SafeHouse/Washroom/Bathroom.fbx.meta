@@ -1,9 +1,34 @@
 fileFormatVersion: 2
 guid: 64b26fca66299f147b2ec64d291dce4a
 ModelImporter:
-  serializedVersion: 20200
+  serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BAthtub
+    second: {fileID: 2100000, guid: 264eb30fb4cd257419643f22dfd1fd96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Toilet
+    second: {fileID: 2100000, guid: 518d957b2a9630c4db7c60d3541209e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wastage
+    second: {fileID: 2100000, guid: 3d99efe56f342f945be65d5828268222, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_
+    second: {fileID: 2100000, guid: cc871e3f4cf7fe44c8a91670d84b3224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water_dirt
+    second: {fileID: 2100000, guid: b1ccc2183016bc3418f6fc83a3765be6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -96,6 +121,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
