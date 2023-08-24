@@ -452,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 484680, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
+  player: 1
 --- !u!195 &226091535
 NavMeshAgent:
   m_ObjectHideFlags: 0

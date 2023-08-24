@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AssaultTrooperAI : MonoBehaviour
+public class AssaultTrooperAI2 : MonoBehaviour
 {
 
     NavMeshAgent agent;
@@ -31,7 +31,7 @@ public class AssaultTrooperAI : MonoBehaviour
         {
             AssaultTrooper assault = FindObjectOfType<AssaultTrooper>();
 
-            target = GameObject.FindWithTag("P1").transform;
+            target = GameObject.FindWithTag("P2").transform;
         }
         agent.SetDestination(target.position);
         //agent.SetDestination(target.position);
