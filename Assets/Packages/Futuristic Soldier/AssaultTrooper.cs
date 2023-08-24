@@ -101,23 +101,17 @@ public class AssaultTrooper : MonoBehaviour {
         //}
 
     }
-    void Jump()
-    {
-        if (Input.GetButtonDown("Jump" + player.ToString()) && grounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpRange * -2 * 9.81f);
-        }
-    }
 
     //method to check/update hp
     public void UpdateHealth(int dmgvalue)
     {
         //Subtract damage from health
         health -= dmgvalue;
-        if (health <= 0)
+        if (health <= 0f)
         {
-            DeathEvent();
+            //DeathEvent();
             StartCoroutine(Die());
+            Debug.Log("Dead1");
         }
     }
 
@@ -129,12 +123,13 @@ public class AssaultTrooper : MonoBehaviour {
         liveScreen.SetActive(false);
         deathScreen.SetActive(true);
         audioSource.PlayOneShot(deathClip);
+        Debug.Log("dead");
     }
 
 
-    public void DeathEvent()
-    {
-        StartCoroutine(Die());
-        gameObject.SetActive(false);
-    }
+    //public void DeathEvent()
+    //{
+    //    StartCoroutine(Die());
+    //    gameObject.SetActive(false);
+    //}
 }
