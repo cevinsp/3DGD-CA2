@@ -9,7 +9,6 @@ public class AssaultTrooperAI : MonoBehaviour
     NavMeshAgent agent;
     Animator anim;
     public Transform target;
-    public GameObject CurrentTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +20,10 @@ public class AssaultTrooperAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
+        agent.SetDestination(target.position);
+        //anim.SetFloat("MoveY", agent.velocity.magnitude / agent.speed);
+=======
         //agent.SetDestination(target.position);
         //anim.SetFloat("MoveY", agent.velocity.magnitude / agent.speed);
         if (target == null)
@@ -28,7 +31,7 @@ public class AssaultTrooperAI : MonoBehaviour
             AssaultTrooper assault = FindObjectOfType<AssaultTrooper>();
             target = assault.gameObject.transform;
         }
-        agent.SetDestination(target.position);
+        //agent.SetDestination(target.position);
 
         //if friendly chase the closest player
         //if (this.gameObject.GetComponent<AssaultTrooper>() != null)
@@ -45,5 +48,6 @@ public class AssaultTrooperAI : MonoBehaviour
         //}
         //agent.SetDestination(target.position);
         //CurrentTarget = target.gameObject;
+>>>>>>> Stashed changes
     }
 }

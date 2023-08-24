@@ -17,9 +17,7 @@ public class EnemyHit : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
-            //assault.health -= 20;
-            assault.UpdateHealth(20);
-            Debug.Log("hit");
+            assault.health -= 20;
         }
     }
 }
