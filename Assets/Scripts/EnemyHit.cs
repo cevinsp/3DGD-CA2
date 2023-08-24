@@ -9,13 +9,13 @@ public class EnemyHit : MonoBehaviour
         if (other.CompareTag("P1"))
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
-            assault.health -= 20;
+            assault.UpdateHealth(20);
             Debug.Log("hit1");
         }
         else
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
-            assault.health -= 20;
+            assault.UpdateHealth(20);
             Debug.Log("hit2");
         }
     }

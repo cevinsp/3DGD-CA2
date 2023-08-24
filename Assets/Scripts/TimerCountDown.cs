@@ -20,6 +20,11 @@ public class TimerCountDown : MonoBehaviour
         {
             StartCoroutine(TimerTake());
         }
+
+        if(secondsLeft <= 0)
+        {
+
+        }
     }
     IEnumerator TimerTake()
     {
