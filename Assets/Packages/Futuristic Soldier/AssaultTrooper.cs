@@ -22,6 +22,8 @@ public class AssaultTrooper : MonoBehaviour {
     public AudioSource audioSource;
     public AudioClip fireClip, deathClip;
 
+    public AudioClip footSteps;
+
     public float moveSpeed = 5f;
     public float rotationSpeed = 180f;
 
@@ -33,6 +35,8 @@ public class AssaultTrooper : MonoBehaviour {
 
     public GameObject deathScreen;
     public GameObject liveScreen;
+
+    public float period = 0f;
 
     public int health = 100;
     public enum Player { P1, P2 }
@@ -70,8 +74,8 @@ public class AssaultTrooper : MonoBehaviour {
             0, Input.GetAxis("Vertical" + player.ToString())
 
         );
-        
 
+        //StartCoroutine(EndOfFrameThing);
 
         Vector3 displacement = transform.TransformDirection(movement.normalized) * moveSpeed;
         isMoving = true;
@@ -90,7 +94,34 @@ public class AssaultTrooper : MonoBehaviour {
             0
 
         );
-        
+
+        if (transform.hasChanged)
+        {
+
+        }
+
+        IEnumerator EndOfFrameThing()
+        {
+            while (true)
+            {
+                yield return new WaitForEndOfFrame();
+                transform.hasChanged = false;//set to false so we can detect the next time it changes
+            }
+            //yield return null;
+        }
+
+        //if (moveSpeed >= 0)
+        //{
+        //    audioSource.PlayOneShot(footSteps);
+        //    return;
+        //}
+        //if (period > .5f)
+        //{
+        //    StartCoroutine(FootStep());
+        //
+        //    period = 0;
+        //}
+        //period += UnityEngine.Time.deltaTime;
 
         //Plays attack animation
 
@@ -99,13 +130,13 @@ public class AssaultTrooper : MonoBehaviour {
             anim.SetTrigger("Attack");
             
         }
+    }
 
-        //if (Input.GetButtonDown("Fire1" + player.ToString()))
-        //{
-        //    anim.SetTrigger("Attack");
-            
-        //}
-
+    IEnumerator FootStep()
+    {
+        for (int i = 0; i < 3; i++)
+        audioSource.PlayOneShot(footSteps);
+        yield return new WaitForSeconds(0.3f);
     }
 
     //method to check/update hp
@@ -118,7 +149,6 @@ public class AssaultTrooper : MonoBehaviour {
         {
             //DeathEvent();
             audioSource.PlayOneShot(deathClip);
-            audioSource.loop = false;
             liveScreen.SetActive(false);
             deathScreen.SetActive(true);
             StartCoroutine(Die());
