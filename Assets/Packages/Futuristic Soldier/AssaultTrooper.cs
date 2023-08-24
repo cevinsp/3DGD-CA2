@@ -116,10 +116,9 @@ public class AssaultTrooper : MonoBehaviour {
         health -= dmgvalue;
         if (health <= 0)
         {
-            //DeathEvent();
+            DeathEvent();
             StartCoroutine(Die());
         }
-        //else StartCoroutine(ResetColor());
     }
 
     IEnumerator Die()
@@ -129,13 +128,13 @@ public class AssaultTrooper : MonoBehaviour {
         gameObject.SetActive(false);
         liveScreen.SetActive(false);
         deathScreen.SetActive(true);
-        //audioSource.PlayOneShot(deathClip);
+        audioSource.PlayOneShot(deathClip);
     }
 
 
-    //public void DeathEvent()
-    //{
-    //    StartCoroutine(Die());
-        //gameObject.SetActive(false);
-    //}
+    public void DeathEvent()
+    {
+        StartCoroutine(Die());
+        gameObject.SetActive(false);
+    }
 }
