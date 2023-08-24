@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class EnemyHit : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Zombie"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
+    public enum Player { P1, P2 }
+    public Player player;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag(player.ToString()))
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
             //assault.health -= 20;
