@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
-    public GameObject creditsCanvas, loadingCanvas;
+    public GameObject creditsCanvas, loadingCanvas, instructionsCanvas, mainCanvas;
     public AudioSource audioSource;
     public AudioClip selectSFX, confirmSFX;
 
@@ -57,6 +57,12 @@ public class CanvasManager : MonoBehaviour
     {
         audioSource.PlayOneShot(confirmSFX);
         SceneManager.LoadScene("Start");
+    }
+
+    public void Continue()
+    {
+        instructionsCanvas.SetActive(false);
+        mainCanvas.SetActive(true);
     }
 
 }
