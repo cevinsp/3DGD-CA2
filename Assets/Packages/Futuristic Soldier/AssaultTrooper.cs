@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AssaultTrooper : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class AssaultTrooper : MonoBehaviour {
     Animator anim;
     Vector3 velocity;
     public bool isMoving;
+    public GameObject loseCanvas;
+
+    public GameObject textDisplay;
 
     [Header("Basic Attack")]
     [Range(0, 10f)]
@@ -40,6 +44,8 @@ public class AssaultTrooper : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         isMoving = false;
+        textDisplay.GetComponent<Text>().text = "HP: " + health;
+        loseCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -107,9 +113,14 @@ public class AssaultTrooper : MonoBehaviour {
     {
         //Subtract damage from health
         health -= dmgvalue;
+        textDisplay.GetComponent<Text>().text = "HP: " + health;
         if (health <= 0f)
         {
             //DeathEvent();
+            audioSource.PlayOneShot(deathClip);
+            
+            liveScreen.SetActive(false);
+            deathScreen.SetActive(true);
             StartCoroutine(Die());
             Debug.Log("Dead1");
         }
@@ -118,12 +129,12 @@ public class AssaultTrooper : MonoBehaviour {
     IEnumerator Die()
     {
         anim.SetBool("isDead", true);
-        yield return new WaitForSeconds(1);
-        gameObject.SetActive(false);
-        liveScreen.SetActive(false);
-        deathScreen.SetActive(true);
-        audioSource.PlayOneShot(deathClip);
+        yield return new WaitForSeconds(3);
+        
         Debug.Log("dead");
+        loseCanvas.SetActive(true);
+        gameObject.SetActive(false);
+
     }
 
 

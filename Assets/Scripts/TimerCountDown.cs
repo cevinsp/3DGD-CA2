@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerCountDown : MonoBehaviour
 {
     public GameObject textDisplay;
-    public int secondsLeft = 60;
+    public int secondsLeft = 45;
     public bool takingAway = false;
+    public static bool hasWon;
 
     void Start()
     {
-        textDisplay.GetComponent<Text>().text = "00:" + secondsLeft;
+        textDisplay.GetComponent<Text>().text = "00: " + secondsLeft;
+        hasWon = false;
     }
 
     private void Update()
@@ -23,7 +26,9 @@ public class TimerCountDown : MonoBehaviour
 
         if(secondsLeft <= 0)
         {
-
+            hasWon = true;
+            Time.timeScale = 0.0f;
+            SceneManager.LoadScene("Win");
         }
     }
     IEnumerator TimerTake()

@@ -10,6 +10,8 @@ public class AssaultTrooperAI : MonoBehaviour
     Animator anim;
     public Transform target;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
