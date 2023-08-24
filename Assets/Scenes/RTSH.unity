@@ -201,7 +201,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 31
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1962,7 +1962,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 31
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -7898,6 +7898,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1672193073, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
+      propertyPath: footSteps
+      value: 
+      objectReference: {fileID: 8300000, guid: 698009c6944e33f4ba1cc096f7355d0d, type: 3}
+    - target: {fileID: 1672193073, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
       propertyPath: liveScreen
       value: 
       objectReference: {fileID: 297592370}
@@ -7917,8 +7921,7 @@ PrefabInstance:
       propertyPath: textDisplay
       value: 
       objectReference: {fileID: 919863460}
-    m_RemovedComponents:
-    - {fileID: 1672193078, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413914b9dd51fa2438b0f33858a4127b, type: 3}
 --- !u!1 &2076564502 stripped
 GameObject:
