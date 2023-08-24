@@ -117,10 +117,10 @@ public class AssaultTrooper : MonoBehaviour {
         if (health <= 0f)
         {
             //DeathEvent();
-            audioSource.PlayOneShot(deathClip);
             
             liveScreen.SetActive(false);
             deathScreen.SetActive(true);
+            audioSource.PlayOneShot(deathClip);
             StartCoroutine(Die());
             Debug.Log("Dead1");
         }
