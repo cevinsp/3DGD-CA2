@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class EnemyHit : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Zombie"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("P1"))
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
             assault.health -= 20;
+            Debug.Log("hit1");
+        }
+        else
+        {
+            AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
+            assault.health -= 20;
+            Debug.Log("hit2");
         }
     }
 }

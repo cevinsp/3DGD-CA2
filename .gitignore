@@ -73,3 +73,4 @@ crashlytics-build.properties
 Assets/Lesson something/Asset Package/Sci-Fi Characters/Bootcamp Map.meta
 Assets/Lesson something/Asset Package/Sci-Fi Characters/Bootcamp Map/Scene.unity
 Assets/Lesson something/Asset Package/Sci-Fi Characters/Bootcamp Map/Scene.unity.meta
+*.meta

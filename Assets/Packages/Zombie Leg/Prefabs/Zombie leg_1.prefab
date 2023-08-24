@@ -451,7 +451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  CurrentTarget: {fileID: 0}
 --- !u!195 &226091535
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -498,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d4877117c6aee43bae1c0cbc24ccda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
 --- !u!1 &5313634884459674709
 GameObject:
   m_ObjectHideFlags: 0

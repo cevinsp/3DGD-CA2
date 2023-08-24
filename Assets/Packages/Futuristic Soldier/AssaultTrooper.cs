@@ -113,19 +113,7 @@ public class AssaultTrooper : MonoBehaviour {
     public void UpdateHealth(int dmgvalue)
     {
         //Subtract damage from health
-        //if damage is positive, color entity red
-        //else damage is negative (meaning healing), color entity green
         health -= dmgvalue;
-        //if (Mathf.Sign(dmgvalue) == 1) UpdateColor(Color.red); //dmg color
-        //else if (Mathf.Sign(dmgvalue) == -1) UpdateColor(Color.green); //heal color
-
-        //for players to update their health bar
-        //AssaultTrooper as = this.gameObject.GetComponent<AssaultTrooper>();
-        //if (as != null)
-        //{
-        //    healthBarUI.UpdateHP(hp, as);
-        //}
-        //if entity is to die
         if (health <= 0)
         {
             //DeathEvent();
@@ -141,7 +129,7 @@ public class AssaultTrooper : MonoBehaviour {
         gameObject.SetActive(false);
         liveScreen.SetActive(false);
         deathScreen.SetActive(true);
-        audioSource.PlayOneShot(deathClip);
+        //audioSource.PlayOneShot(deathClip);
     }
 
 
