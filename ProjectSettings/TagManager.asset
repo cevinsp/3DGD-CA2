@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Ground
   - Zombie
-  - Player 1
-  - Player 2
+  - P1
+  - P2
   layers:
   - Default
   - TransparentFX
