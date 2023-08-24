@@ -12,7 +12,7 @@ public class EnemyHit : MonoBehaviour
         if (other.CompareTag("P1"))
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
-            assault.UpdateHealth(2);
+            assault.UpdateHealth(12);
             Debug.Log("hit1");
             audioSource.PlayOneShot(hitSFX);
             StartCoroutine(DamageSFX());
@@ -22,7 +22,7 @@ public class EnemyHit : MonoBehaviour
         else
         {
             AssaultTrooper assault = other.gameObject.GetComponent<AssaultTrooper>();
-            assault.UpdateHealth(2);
+            assault.UpdateHealth(12);
             Debug.Log("hit2");
         }
 

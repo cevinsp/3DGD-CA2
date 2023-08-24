@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnerScript : MonoBehaviour
 {
     public GameObject zombieSpawn;
+    //public GameObject zombieSpawn2;
     public float period = 0f;
     public AudioSource audioSource;
     public AudioClip zombieSFX;
@@ -12,7 +13,7 @@ public class SpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (period > 3)
+        if (period > 5)
         {
             StartCoroutine(Spawn());
             audioSource.PlayOneShot(zombieSFX);
@@ -23,9 +24,10 @@ public class SpawnerScript : MonoBehaviour
     }
     IEnumerator Spawn()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
             Instantiate(zombieSpawn, transform.position, Quaternion.identity);
-        
+            //Instantiate(zombieSpawn2, transform.position, Quaternion.identity);
+
         yield return new WaitForSeconds(0);
     }
 }
