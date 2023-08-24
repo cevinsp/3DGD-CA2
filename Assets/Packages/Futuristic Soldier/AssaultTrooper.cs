@@ -87,19 +87,19 @@ public class AssaultTrooper : MonoBehaviour {
         
 
         //Plays attack animation
-<<<<<<< Updated upstream
+
         if (Input.GetButtonDown("Fire1" + player.ToString()))
         {
             anim.SetTrigger("Attack");
             
         }
-=======
+
         //if (Input.GetButtonDown("Fire1" + player.ToString()))
         //{
         //    anim.SetTrigger("Attack");
             
         //}
->>>>>>> Stashed changes
+
     }
     void Jump()
     {

@@ -20,10 +20,9 @@ public class AssaultTrooperAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
+
         agent.SetDestination(target.position);
         //anim.SetFloat("MoveY", agent.velocity.magnitude / agent.speed);
-=======
         //agent.SetDestination(target.position);
         //anim.SetFloat("MoveY", agent.velocity.magnitude / agent.speed);
         if (target == null)
@@ -48,6 +47,5 @@ public class AssaultTrooperAI : MonoBehaviour
         //}
         //agent.SetDestination(target.position);
         //CurrentTarget = target.gameObject;
->>>>>>> Stashed changes
     }
 }
